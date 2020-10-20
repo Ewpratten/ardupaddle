@@ -8,13 +8,13 @@
 #define OUTPUT_VOLTAGE HIGH
 
 // Words per minute
-#define WORDS_PER_MINUTE 15
+#define WORDS_PER_MINUTE 17
 
 // Calculate the number of dits per second
 const int dits_per_second = (WORDS_PER_MINUTE * 50) / 60;
 const int ms_per_dit = 1000 / dits_per_second;
 const int ms_per_dah = ms_per_dit * 3;
-const int ms_per_pause = ms_per_dit / 2;
+const int ms_per_pause = ms_per_dit ;
 
 // Possible states
 enum possible_states { IDLE, DIT, DAH, PAUSE };
