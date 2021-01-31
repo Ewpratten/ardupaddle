@@ -1,0 +1,8 @@
+[build]
+target = "vendor/avr-atmega32u4.json"
+
+[unstable]
+build-std = ["core"]
+
+[target.'cfg(target_arch = "avr")']
+runner = "vendor/leonardo-runner.sh"
