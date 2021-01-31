@@ -8,7 +8,7 @@
 #define OUTPUT_VOLTAGE HIGH
 
 // Words per minute
-#define WORDS_PER_MINUTE 17
+#define WORDS_PER_MINUTE 20
 
 // Calculate the number of dits per second
 const int dits_per_second = (WORDS_PER_MINUTE * 50) / 60;
@@ -86,8 +86,10 @@ void loop() {
 
     // Handle each state
     if(current_state == possible_states::IDLE || current_state == possible_states::PAUSE){
-        digitalWrite(OUTPUT_PIN, LOW);
+//        digitalWrite(OUTPUT_PIN, LOW);
+          noTone(OUTPUT_PIN);
     }else if (current_state == possible_states::DIT|| current_state == possible_states::DAH){
-        digitalWrite(OUTPUT_PIN, OUTPUT_VOLTAGE);
+//        digitalWrite(OUTPUT_PIN, OUTPUT_VOLTAGE);
+          tone(OUTPUT_PIN, 800);
     }
 }
